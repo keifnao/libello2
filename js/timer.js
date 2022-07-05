@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=PIiMSMz7KzM
 export default class Timer {
     constructor(root) {
         root.innerHTML = Timer.getHTML();
