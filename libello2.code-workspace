@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "libello2",
+			"path": "..\\..\\libello2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}
