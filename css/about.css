@@ -1,0 +1,17 @@
+.module__mindfullness {
+    display: flex;
+}
+
+.mindfulness--breathe-in {
+    position: absolute;
+}
+
+.mindfulness--breathe-out {
+    position: absolute;
+}
+
+.breathing-circle {
+    position: absolute;
+    border-width: 3px;
+    height: 
+}
