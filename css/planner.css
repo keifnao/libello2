@@ -61,6 +61,12 @@
     color: #222831;
 }
 
+.card-container__body {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
 .card-container__header {
     display: flex;
     align-items: center;
@@ -73,15 +79,41 @@
     border: none!important;
 }
 
+.card-assignment {
+    
+}
+
+.card-assignment__header {
+
+}
 
 .card-assignment__title {
-    padding: 0;
+    padding: 10px;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-assignment__body {
+    font-size: 10%;
 }
 
 .card-assignment__column {
     margin: 0;
+    padding: 1%;
+    max-width: 100%;
 }
+
+.card__header {
+    font-size: 100%;
+}
+
+/* @media (max-width: 991px) {
+    .card__header {
+        font-size: 2.1vw;
+    }
+} */
 
 /* Timer */
 

@@ -1,17 +1,101 @@
-.module__mindfullness {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes initialize {
+    from {
+        border-weight: 0%;
+    }
+    to {
+        border-weight: 100%
+    }
+}
+
+@keyframes breatheIn {
+    from {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+
+    to {
+        width: 200%;
+        height: 200%;
+        border-radius: 200%;
+    }
+}
+
+.module__mindfulness {
     display: flex;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    background-color: #222831;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.mindfulness {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
 }
 
 .mindfulness--breathe-in {
-    position: absolute;
+    display: none;
+    color: white;
+    transition: 1s;
 }
 
 .mindfulness--breathe-out {
-    position: absolute;
+    display: none;
+    color: white;
+    transition: 1s;
 }
 
-.breathing-circle {
-    position: absolute;
-    border-width: 3px;
-    height: 
+.mindfulness--start {
+    display: none;
+    outline: none;
+    background-color: #222831;
+    border: 3px solid white;
+    color: white;
+    padding: 3px;
+    width: 50%;
+    transition: 1s;
+    cursor: pointer;
 }
+.mindfulness--start:hover {
+    outline: none;
+    background-color: white;
+    border: 3px solid white;
+    color: #222831;
+    padding: 3px;
+    width: 50%;
+}
+.mindfulness--start:focus {
+    outline: 0;
+    opacity: 0;
+}
+
+
+
+.breathing-circle {
+    border: 10px solid white;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    animation: 1s ease-out 0s 1 breatheIn;
+}
+/* https://stackoverflow.com/questions/8451909/expand-div-from-the-middle-instead-of-just-top-and-left-using-css */
+
+

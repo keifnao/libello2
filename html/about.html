@@ -14,14 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Koulen&family=Lato:wght@100;400;700&display=swap" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#ff0000">
-
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/about.css">
     <title>Libello</title>
@@ -59,13 +51,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="toggleMobileMenu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link navbar__link navbar__link--about" href="html/about.html">About.</a>
+                    <a class="nav-link navbar__link navbar__link--about" href="about.html">About.</a>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar__link navbar__link--login" href="html/login.html" role="button">Login.</a>
+                    <a class="nav-link navbar__link navbar__link--login" href="login.html" role="button">Login.</a>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar__link navbar__link--register" href="html/register.html" role="button">Register.</a>
+                    <a class="nav-link navbar__link navbar__link--register" href="register.html" role="button">Register.</a>
                     </li>
                 </ul>
             </div>
@@ -78,17 +70,17 @@
 
 <div class="container-fluid">
     <div class="module__mindfulness">
-        <span class="mindfulness--breathe-in">
+        <span class="mindfulness mindfulness__frame mindfulness--breathe-in">
             <p>Breathe In</p>
             <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
             </span>
-        <span class="mindfulness--breathe-out">
+        <span class="mindfulness mindfulness__frame mindfulness--breathe-out">
             <p>Breathe Out</p>
             <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
             </span>
-        <div class="breathing-circle">
+        <div class="mindfulness breathing-circle">
         </div>
-        <button class="mindfullness--start">
+        <button class="mindfulness mindfulness--start shrink-border" type="button">
             Start Mindfullness Exercise
         </button>
     </div>
