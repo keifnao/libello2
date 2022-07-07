@@ -18,15 +18,30 @@
 
 @keyframes breatheIn {
     from {
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
+        transform: scale(1);
+        top: 25%;
+    }
+
+    50% {
+        transform: scale(3);
+        top: 25%;
     }
 
     to {
-        width: 200%;
-        height: 200%;
-        border-radius: 200%;
+        transform: scale(1);
+        top: 25%;
+    }
+}
+
+@keyframes breatheOut {
+    from {
+        transform: scale(3);
+        top: 25%;
+    }
+
+    to {
+        transform: scale(1);
+        top: 25%;
     }
 }
 
@@ -40,6 +55,7 @@
     font-family: "Josefin Sans", sans-serif;
     font-weight: lighter;
     font-size: 14px;
+    overflow: hidden;
 }
 
 .mindfulness {
@@ -64,7 +80,6 @@
 }
 
 .mindfulness--start {
-    display: none;
     outline: none;
     background-color: #222831;
     border: 3px solid white;
@@ -90,11 +105,18 @@
 
 
 .breathing-circle {
+    display: none;
+    
     border: 10px solid white;
     border-radius: 100px;
     height: 100px;
     width: 100px;
-    animation: 1s ease-out 0s 1 breatheIn;
+    animation: breatheIn 20s;
+}
+
+
+.mindfulness--visible {
+    display: initial;
 }
 /* https://stackoverflow.com/questions/8451909/expand-div-from-the-middle-instead-of-just-top-and-left-using-css */
 

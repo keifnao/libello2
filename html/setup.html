@@ -113,11 +113,13 @@
     let interval = 1
     function addParameter() {
         interval++
-        const basetext = "<input type='text' name='text' placeholder='class__name' required='required' id='class__id' class='form-control'/>"
-        let result = basetext.replace("class__name", `Class ${interval}`);
-        result = result.replace("class__id", `class__id--${interval}`);
-        result = result.replace("name='text'", `name='class__name--${interval}'`);
-        document.getElementById("setup").innerHTML += result
+
+        const form = document.getElementById("setup");
+        var input = document.createElement('input');
+        let result = `<input type='text' name='class__name--${interval}' placeholder='Class ${interval}' required='required' id='class__id--${interval}' class='form-control'/>`;
+        input.innerHTML = result;
+        var child = input.firstChild;
+        form.appendChild(child);
     }
 </script>
 
