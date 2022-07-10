@@ -80,6 +80,7 @@
 }
 
 .mindfulness--start {
+    display: none;
     outline: none;
     background-color: #222831;
     border: 3px solid white;
@@ -102,7 +103,13 @@
     opacity: 0;
 }
 
+.anim--breathe__out {
+    animation: breatheOut 7s;
+}
 
+.anim--breathe__in {
+    animation: breatheIn 7s;
+}
 
 .breathing-circle {
     display: none;
@@ -111,7 +118,6 @@
     border-radius: 100px;
     height: 100px;
     width: 100px;
-    animation: breatheIn 20s;
 }
 
 

@@ -1,24 +1,31 @@
 import Timer from "./timer.js";
-
-let reverse = true;
-
-const timerButton = document.getElementById("timerButton");
-
-if (timerButton.addEventListener)
-    timerButton.addEventListener("click", buildTimer, false);
-else if (timerButton.attatchEvent)
-    timerButton.attachEvent("onclick", buildTimer);
+import Mindfulness from "./mindfulness.js";
 
 
-function buildTimer() {
+// let reverse = true;
 
-    if (reverse) {
-        new Timer(document.querySelector(".module__timer"));
-    } else {
-        document.querySelector(".module__timer").textContent = "";
-    }
+// const timerButton = document.getElementById("timerButton");
 
-    reverse = !reverse;
-}
+// if (timerButton.addEventListener)
+//     timerButton.addEventListener("click", buildTimer, false);
+// else if (timerButton.attatchEvent)
+//     timerButton.attachEvent("onclick", buildTimer);
 
+
+// function buildTimer() {
+
+//     if (reverse) {
+//         new Timer(document.querySelector(".module__timer"));
+//     } else {
+//         document.querySelector(".module__timer").textContent = "";
+//     }
+
+//     reverse = !reverse;
+// }
+
+
+
+
+
+new Mindfulness(document.querySelector(".module__mindfulness"));
 

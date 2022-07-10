@@ -68,16 +68,15 @@
 }
 
 .card-container__body {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap; 
     justify-content: center;
-    align-items: stretch;
+    align-items: stretch; */
+    /* flex: 1 1 0px; */
 }
 
 .card-container__header {
-    display: flex;
-    align-items: center;
-    background: #EEEEEE;
+
 }
 
 .card-assignment {
@@ -86,6 +85,16 @@
 
 .card-assignment__header {
     max-width: 100%;
+    background-color: #393E46;
+    border-radius: 0;
+}
+
+.card-assignment__header:hover {
+    background-color: #222831;
+}
+
+.card-assignment__header:focus {
+    background-color: #222831;
 }
 
 .card-assignment__title {
@@ -95,6 +104,7 @@
     word-break: break-word;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .card-assignment__body {
@@ -102,27 +112,24 @@
 }
 
 .card-assignment__body--text {
-    font-size: 0.5vw;
+    font-size: 2vh;
     word-break: break-word;
 }
 @media (max-width: 991px) {
     .card-assignment__body--text {
-        font-size: 2.5vw;
+        font-size: 2vh;
         word-break: break-word;
     }
 }
 
 .card-assignment__column {
     margin: 0;
-    padding: 1%;
-    max-width: vw;
+    padding: 4px;
 }
 @media (max-width: 991px) {
     .card-assignment__column {
         margin: 0;
         padding: 1%;
-        max-width: 100%;
-        flex: auto;
     }
 }
 
