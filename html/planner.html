@@ -92,7 +92,7 @@
             <button class="mab__button mab__button--secondary" id="timerButton">
                 <span class="mab__text">Timer</span>
                 </button>
-            <button class="mab__button mab__button--secondary">
+            <button class="mab__button mab__button--secondary" id="mindfulButton">
                 <span class="mab__text">Mindfulness</span>
                 </button>
             <button class="mab__button mab__button--secondary">
@@ -293,7 +293,7 @@
 
             if (keepOpen) return;
 
-            document.querySelectorAll(".mab__list").foreach(list => {
+            document.querySelectorAll(".mab__list").forEach(list => {
                 list.classList.remove("mab__list--visible");
             });
         });

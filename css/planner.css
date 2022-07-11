@@ -179,4 +179,123 @@
   .module__timer--visible {
     display: initial;
   }
-  
+
+/* Mindfulness */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes initialize {
+    from {
+        border-weight: 0%;
+    }
+    to {
+        border-weight: 100%
+    }
+}
+
+@keyframes breatheIn {
+    from {
+        transform: scale(1);
+        top: 25%;
+    }
+
+    to {
+        transform: scale(3);
+        top: 25%;
+    }
+}
+
+@keyframes breatheOut {
+    from {
+        transform: scale(3);
+        top: 25%;
+    }
+
+    to {
+        transform: scale(1);
+        top: 25%;
+    }
+}
+
+.mindfulness__container {
+    display: flex;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    background-color: #222831;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.mindfulness {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+.mindfulness__frame--breathe-in, .mindfulness__frame--breathe-out {
+    display: none;
+    color: white;
+    transition: 1s;
+    z-index: 2;
+}
+
+.mindfulness--start {
+    display: none;
+    outline: none;
+    background-color: #222831;
+    border: 3px solid white;
+    color: white;
+    padding: 3px;
+    width: 50%;
+    transition: 1s;
+    cursor: pointer;
+}
+.mindfulness--start:hover {
+    outline: none;
+    background-color: white;
+    border: 3px solid white;
+    color: #222831;
+    padding: 3px;
+    width: 50%;
+}
+.mindfulness--start:focus {
+    outline: 0;
+    opacity: 0;
+}
+
+.anim--breathe__in {
+    animation: breatheIn 7s;
+}
+.anim--breathe__out {
+    animation: breatheOut 7s;
+}
+
+.mindfulness__breathing-circle {
+    display: none;
+    z-index: 3;
+    border: 10px solid white;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+.mindfulness--visible {
+    display: initial;
+}
+/* https://stackoverflow.com/questions/8451909/expand-div-from-the-middle-instead-of-just-top-and-left-using-css */
