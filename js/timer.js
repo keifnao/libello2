@@ -10,11 +10,14 @@ export default class Timer {
             seconds: root.querySelector(".timer__part--seconds"),
             control: root.querySelector(".timer__btn--control"),
             reset: root.querySelector(".timer__btn--reset"),
+            pomodoro: root.querySelector(".timer__btn--pomodoro"),
         };
 
         this.interval = null; // Use the setinterval function in java to make the timer trigger.
         // Its null because the timer has to start up not running.
         this.remainingSeconds = 0; // Current remaining seconds
+
+        this.ispomodoro = false;
 
         // EventListeners for the buttons ie. check if they are clicked
         this.el.control.addEventListener("click", () => {
@@ -27,14 +30,30 @@ export default class Timer {
         });
 
         this.el.reset.addEventListener("click", () => { // Prompt user for time input
-            const inputMinutes = prompt("Enter number of minutes:"); // Opens up a prompt in the browser
-
-            if (inputMinutes < 60) {
-                this.stop(); // Stop before you set a new time
-                this.remainingSeconds = inputMinutes * 60;
+            if (this.ispomodoro) {
+                this.stop();
+                if (this.pomo) {
+                    this.remainingSeconds = 1500;
+                } else {
+                    this.remainingSeconds = 300;
+                }
                 this.updateInterfaceTime();
+                this.pomo = !this.pomo;
+            } else {
+                const inputMinutes = prompt("Enter number of minutes:"); // Opens up a prompt in the browser
+
+                if (inputMinutes < 60) {
+                    this.stop(); // Stop before you set a new time
+                    this.remainingSeconds = inputMinutes * 60;
+                    this.updateInterfaceTime();
+                }
             }
         });
+
+        this.el.pomodoro.addEventListener("click", () => {
+            this.ispomodoro = !this.ispomodoro;
+            this.pomo = true;
+        })
 
     }
 
@@ -72,7 +91,7 @@ export default class Timer {
             this.remainingSeconds-- ; // Remove a second every second
             this.updateInterfaceTime(); // Update timer
 
-            if (this.reaminingSeconds === 0) {
+            if (this.remainingSeconds === 0) {
                 this.stop(); // Another function
             }
 
@@ -93,15 +112,25 @@ export default class Timer {
 
     static getHTML() {
         return `
-            <span class="timer__part timer__part--minutes">00</span>
-            <span class="timer__part">:</span>
-            <span class="timer__part timer__part--seconds">00</span>
-            <button type="button" class="timer__btn timer__btn--control timer__btn--start">
-                <i class="fa-solid fa-play"></i>
-            </button>
-            <button type="button" class="timer__btn timer__btn--control timer__btn--reset">
-                <i class="fa-solid fa-clock"></i>
-            </button>
+            <div class="timer__container">
+                <div class="timer">
+                    <span class="timer__part timer__part--minutes">00</span>
+                    <span class="timer__part">:</span>
+                    <span class="timer__part timer__part--seconds">00</span>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+                        <i class="fa-solid fa-play"></i>
+                        </button>
+                    <button type="button" class="timer__btn timer__btn--control timer__btn--reset">
+                        <i class="fa-solid fa-clock"></i>
+                        </button>
+                    <button type="button" class="timer__btn timer__btn--control timer__btn--pomodoro">
+                        Pomodoro <i class="fa-solid fa-timeline"></i>
+                        </button>
+                </div>
+            </div>
         `;
     }
 

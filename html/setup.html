@@ -23,7 +23,7 @@
 <!-- Navigation Bar -->
 <div class="container-fluid navbar__container">
     <nav class="navbar navbar-expand-md fixed-top">
-        <a class="navbar-brand navbar__logo" href="../index.html"><i class="fa-solid fa-align-right fa-sm"></i>Libello</a>
+        <a class="navbar-brand navbar__logo" href="../index.html">Libello</a>
 
         <button 
             class="navbar-toggler navbar__toggler" 
@@ -64,6 +64,7 @@
       <form method="post" id="setup">
         <input type='text' name='class__name--1' placeholder='Class 1' required='required' id='class__id--1' class='form-control'/>
       </form>
+      
       <button class="btn add-class-button" onclick="addParameter()"><i class="fa-solid fa-plus"></i></button>
       <button class="btn add-class-button">Submit</button>
       <button class="btn add-class-button" onclick="removeParameter()"><i class="fa-solid fa-plus"></i></button>
@@ -123,7 +124,7 @@
     
     function removeParameter() {
         
-        if (form.hasChildNodes()) {
+        if (interval > 0) {
             form.removeChild(form.lastElementChild)
             interval--
         }

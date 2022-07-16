@@ -68,11 +68,7 @@
 }
 
 .card-container__body {
-    /* display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    align-items: stretch; */
-    /* flex: 1 1 0px; */
+
 }
 
 .card-container__header {
@@ -85,16 +81,27 @@
 
 .card-assignment__header {
     max-width: 100%;
-    background-color: #393E46;
+    background-color: #d2b48c;
+    border: none;
     border-radius: 0;
 }
 
-.card-assignment__header:hover {
-    background-color: #222831;
+.card-assignment__header:hover, .card-assignment__header:active, .card-assignment__header:focus {
+    background-color: #bc9055;
 }
 
-.card-assignment__header:focus {
+
+.card-assignment__header::before {
+    content: '';
     background-color: #222831;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 5px;
+    width: 55%;
+    z-index: 2;
 }
 
 .card-assignment__title {
@@ -145,35 +152,80 @@
 
 /* Timer */
 
+/* @keyframes btnPress {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+} */
+
 /* https://www.youtube.com/watch?v=PIiMSMz7KzM */
-.module__timer {
+.timer__container {
     font-family: sans-serif;
-    display: flex;
+    display: relative;
     padding: 1%;
-    border-radius: 15px;
+    background-color:rgba(0, 0, 0, 0.05);
+    text-align: center;
+    height: 200px;
+    width: 200px;
   }
   
   .timer__part {
     font-size: 36px;
     font-weight: bold;
   }
-  
+
+
   .timer__btn {
     width: 50px;
     height: 50px;
-    margin-left: 16px;
-    border-radius: 50%;
+    margin: 5px;
+    position: relative;
     border: none;
     color: white;
     background: #8208e6;
+    border-bottom: 4px solid #811331;
+    transition: 
+        background-color 0.5s
+        border-bottom 0.5s;
   }
+
+  .timer__btn:focus {
+    outline: 0;
+  }
+
+  /* .timer__btn:hover {
+    transform: scale(1.05);
+  } */
   
   .timer__btn--start {
     background: #00b84c;
+    border-bottom: 5px solid green;
   }
   
   .timer__btn--stop {
-    background: #ff0256;
+    background: #D22B2B;
+    border-color: #811331;
+    border-width: 2px;
+    position: relative;
+    margin-top: 2px;
+    top: 2px;
+  }
+
+  .timer__btn--pomodoro {
+    background: #D22B2B;
+    border-bottom: 5px solid #811331;
+    width: 115px;
+  }
+
+  .timer__btn--pomodoro:active {
+    background: #C41E3A;
+    border-color: #811331;
+    border-width: 2px;
+    margin-top: 3px;
+    width: 115px;
   }
 
   .module__timer--visible {
@@ -181,15 +233,6 @@
   }
 
 /* Mindfulness */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 @keyframes initialize {
     from {
@@ -224,6 +267,24 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    to {
+        opacity: 1;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+}
+
 .mindfulness__container {
     display: flex;
     position: relative;
@@ -239,6 +300,7 @@
 
 .mindfulness {
     position: absolute;
+    display: none;
     top: 50%;
     left: 0;
     right: 0;
@@ -247,10 +309,12 @@
 }
 
 .mindfulness__frame--breathe-in, .mindfulness__frame--breathe-out {
-    display: none;
     color: white;
-    transition: 1s;
     z-index: 2;
+}
+
+.mindfulness__frame--animation {
+    animation: fadeIn 2s;
 }
 
 .mindfulness--start {
@@ -272,10 +336,11 @@
     padding: 3px;
     width: 50%;
 }
-.mindfulness--start:focus {
+.mindfulness--start:focus, .mindfulness--start:active {
     outline: 0;
     opacity: 0;
 }
+
 
 .anim--breathe__in {
     animation: breatheIn 7s;

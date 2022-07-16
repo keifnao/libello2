@@ -1,9 +1,14 @@
-/* Page Margins and Padding */
-@media (max-width: 935px){
-    body {
-        padding-top: 10%;
-    }
+:root {
+    --base: #222831;
+    --base-light: #393E46;
+    --main-bg: #EEEEEE;
+    --main-bg-emphasis: #c7c7c7;
+
+    --PHONESCREEN: 411px;
+    --TABLETSCREEN: 991px;
 }
+
+/* Page Margins and Padding */
 
 body {
     padding: 0;
@@ -13,119 +18,92 @@ body {
 
 .container-fluid {
     padding: 3% 10%;
-    background-color: #EEEEEE;
-    color: #222831;
-}
-
-.col-lg-4, .col-lg-6, .col-lg-8, .col-sm-12 { /* Preferably all columns would have zero padding but these are the ones I used most often. */
-    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--base);
 }
 
 .row {
     margin: 0;
 }
 
-.border-emphasis {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-color: #393E46;
+.col-lg-6 {
+    padding: 0;
 }
 
 /* Text Formats */
 
-.title__text {
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    font-size: 4vw;
-  }
-  @media (max-width: 991px) {
-    .title__text {
-      font-size: 10vw;
+.primary {
+    font-size: 2.5vw;
     }
-  }  
+    @media (max-width: var(--TABLETSCREEN)) {
+        .primary {
+            font-size: 7vw;
+        }
+}
+.secondary {
+    font-size: 1.5vw;
+    }
+    @media (max-width: var(--TABLETSCREEN)) {
+        .secondary {
+            font-size: 5vw;
+        }
+}
+.tertiary {
+    font-size: 0.5vw;
+    }
+    @media (max-width: var(--TABLETSCREEN)) {
+        .tertiary {
+            font-size: 3vw;
+        }
+}
+
 
 .header-text {
     font-weight: 400;
     font-family: 'Josefin Sans', sans-serif;
     padding: 2% 0%;
 }
-.header-text--title {
-    font-size: 5vw;
-}
-.header-text--primary {
-    font-size: 7vw;
-}
-@media (min-width: 991px) {
-    .header-text--primary {
-        font-size: 2.5vw;
-    }
-}
-.header-text--secondary {
-    font-size: 2vw;
-}
-
 .body-text {
     font-family: 'Lato', sans-serif;
-}
-.body-text--primary {
-    font-size: 5vw;
-}
-@media (min-width: 991px) {
-    .body-text--primary {
-        font-size: 1.25vw;
-    }
-}
-.body-text--secondary {
-    font-size: 2vw;
 }
 
 /* Navbar */
 
 .navbar {
     padding: 0 10%;
-    background-color: #EEEEEE;
+    background-color: var(--main-bg);
+    border-bottom: 3px solid var(--base);
+    }
+    .navbar__logo, .navbar__logo:hover  {
+        font-family: 'Josefin Sans', sans-serif, Arial;
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: #222831;
+    }
+    .navbar__logo::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 800;
+        font-size: 36px;
+        content: '\f038';
+    }
+    .nav-link, .nav-link:hover {
+        font-family: 'Josefin Sans', sans-serif, Arial;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #222831;
+    }
+    .nav-item {
+        margin: 0 2.5%;
 }
-
-.navbar__logo, .navbar__logo:hover  {
-    font-family: 'Josefin Sans', sans-serif, Arial;
-    font-size: 2.5rem;
-    text-decoration: none;
-    color: #222831;
-}
-
-.nav-link, .nav-link:hover {
-    font-family: 'Josefin Sans', sans-serif, Arial;
-    font-size: 1rem;
-    text-decoration: none;
-    color: #222831;
-}
-
-.nav-item {
-    margin: 2.5%;
-}
-
-
-/* Sidebar */
-/* .side-bar {
-    width: 3%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-} */
-
 
 .color-demonstration {
     color: #222831;
     color: #393E46;
-    color: #00ADB5;
     color: #EEEEEE;
-}
 
-/* CSS HEX */
-/* 
-#222831;
-#393E46;
-#00ADB5;
-#EEEEEE;
-*/
+    color: #007FFF; /* Blue */
+    color: #009150; /* Green */ 
+    color: #F9E076; /* Yellow */
+    color: #D22B2B; /* Red */
+    color: #FF9F00; /* Orange */
+}

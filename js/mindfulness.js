@@ -20,7 +20,7 @@ export default class Mindfulness {
 
     breatheIn() {
         this.el.circle.classList.add(`anim--breathe__in`)
-        this.el.breatheIn.classList.add(`mindfulness--visible`)
+        this.el.breatheIn.classList.add(`mindfulness--visible`, `mindfulness__frame--animation`)
         console.log("Breathing In")
         // setTimeout(() => {
         //     this.el.circle.classList.remove(`anim--breathe__in`)
@@ -42,7 +42,7 @@ export default class Mindfulness {
         this.breatheIn()
         setTimeout(() => {
             this.el.circle.classList.remove(`anim--breathe__in`)
-            this.el.breatheIn.classList.remove(`mindfulness--visible`)
+            this.el.breatheIn.classList.remove(`mindfulness--visible`, `mindfulness__frame--animation`)
             this.breatheOut()
             console.log("Finished breathein")
 
@@ -59,21 +59,21 @@ export default class Mindfulness {
 
     static getHTML() {
         return `
-        <div class="mindfulness__container">
-            <span class="mindfulness mindfulness__frame mindfulness__frame--breathe-in">
-                <p>Breathe In</p>
-                <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
-                </span>
-            <span class="mindfulness mindfulness__frame mindfulness__frame--breathe-out">
-                <p>Breathe Out</p>
-                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
-                </span>
-            <div class="mindfulness mindfulness__breathing-circle">
+            <div class="mindfulness__container">
+                <span class="mindfulness mindfulness__frame mindfulness__frame--breathe-in">
+                    <p>Breathe In</p>
+                    <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+                    </span>
+                <span class="mindfulness mindfulness__frame mindfulness__frame--breathe-out">
+                    <p>Breathe Out</p>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </span>
+                <div class="mindfulness mindfulness__breathing-circle">
+                </div>
+                <button type="button" class="mindfulness mindfulness--start shrink-border mindfulness--visible" type="button">
+                    Start Mindfulness Exercise
+                </button>
             </div>
-            <button type="button" class="mindfulness mindfulness--start shrink-border mindfulness--visible" type="button">
-                Start Mindfulness Exercise
-            </button>
-        </div>
         `;
     }
 

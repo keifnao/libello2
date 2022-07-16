@@ -17,6 +17,7 @@ function buildTimer() {
     if (reverseTimer) {
         new Timer(document.querySelector(".module__timer"));
     } else {
+        document.querySelector(".timer__container").textContent = "";
         document.querySelector(".module__timer").textContent = "";
     }
 
